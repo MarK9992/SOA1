@@ -1,4 +1,4 @@
-package fr.unice.polytech.soa1.cookbook.rest;
+package fr.unice.polytech.soa1.volley.rest;
 
 
 public class Generator {
