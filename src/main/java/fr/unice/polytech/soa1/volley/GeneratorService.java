@@ -1,7 +1,6 @@
-package fr.unice.polytech.soa1.cookbook.rest;
+package fr.unice.polytech.soa1.volley;
 
 import org.json.JSONArray;
-import org.json.JSONString;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
