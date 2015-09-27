@@ -24,10 +24,17 @@ http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v
 http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd">
 
     <jaxrs:server id="volleyStuffService" address="/volley">
+
         <jaxrs:serviceBeans>
             <ref component-id="volSvc"/>
         </jaxrs:serviceBeans>
+
+        <jaxrs:providers>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+        </jaxrs:providers>
+
     </jaxrs:server>
+
 
     <bean id="volSvc" class="fr.unice.polytech.soa1.volley.VolleyStuffService"/>
 

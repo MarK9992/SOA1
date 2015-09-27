@@ -1,14 +1,11 @@
 package fr.unice.polytech.soa1.volley;
 
-import org.json.JSONArray;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Collection;
 
 @Path("/stuff")
-// Here we generate JSON data from scratch, one should use a framework instead
 @Produces(MediaType.APPLICATION_JSON)
 public class VolleyStuffService {
 
@@ -31,13 +28,8 @@ public class VolleyStuffService {
 	}
 
 	@GET
-	public Response getAvailableVolleyStuff() {
-		Collection<VolleyStuff> gens = storage.findAll();
-		JSONArray result = new JSONArray();
-		for(VolleyStuff g: gens) {
-			result.put(g.getName());
-		}
-		return Response.ok().entity(result.toString(2)).build();
+	public Collection<VolleyStuff> getAvailableVolleyStuff() {
+		return storage.findAll();
 	}
 
 
