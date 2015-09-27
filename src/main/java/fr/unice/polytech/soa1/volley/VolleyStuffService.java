@@ -12,21 +12,27 @@ import java.util.Collection;
 @Produces(MediaType.APPLICATION_JSON)
 public class VolleyStuffService {
 
+    Storage storage;
+
+    public VolleyStuffService() {
+        storage = StorageMock.getInstance();
+    }
+
 	@POST
 	@Consumes(MediaType.TEXT_PLAIN)
 	public Response createNewVolleyStuff(String name) {
-	    if(Storage.read(name) != null) {
+	    if(storage.read(name) != null) {
 			return Response.status(Response.Status.CONFLICT)
 					       .entity("\"Existing name " + name + "\"")
 					       .build();
 		}
-		Storage.create(name);
+        storage.create(name);
 		return Response.ok().build();
 	}
 
 	@GET
 	public Response getAvailableVolleyStuff() {
-		Collection<VolleyStuff> gens = Storage.findAll();
+		Collection<VolleyStuff> gens = storage.findAll();
 		JSONArray result = new JSONArray();
 		for(VolleyStuff g: gens) {
 			result.put(g.getName());
@@ -38,20 +44,20 @@ public class VolleyStuffService {
 	@Path("/{name}")
 	@GET
 	public Response generateIdentifier(@PathParam("name") String name) {
-		if(Storage.read(name) == null) {
+		if(storage.read(name) == null) {
 			return Response.status(Response.Status.NOT_FOUND).build();
 		}
-		String value = Storage.read(name).run();
+		String value = storage.read(name).run();
 		return Response.ok().entity("\""+value+"\"").build();
 	}
 
 	@Path("/{name}")
 	@DELETE
 	public Response deleteGenerator(@PathParam("name") String name) {
-		if(Storage.read(name) == null) {
+		if(storage.read(name) == null) {
 			return Response.status(Response.Status.NOT_FOUND).build();
 		}
-		Storage.delete(name);
+        storage.delete(name);
 		return Response.ok().build();
 	}
 

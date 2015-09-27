@@ -2,32 +2,15 @@ package fr.unice.polytech.soa1.volley;
 
 
 import java.util.Collection;
-import java.util.HashMap;
 
-public class Storage {
+public interface Storage {
 
-	// this mocks a database.
-	private static HashMap<String, VolleyStuff> contents = new HashMap<String, VolleyStuff>();
+	void create(String name);
 
-	public static void create(String name) {
-		contents.put(name, new VolleyStuff(name));
-	}
+	VolleyStuff read(String name);
 
-	public static VolleyStuff read(String name) {
-		return contents.get(name);
-	}
+	void delete(String name);
 
-	public static void delete(String name) {
-		contents.remove(name);
-	}
-
-	public static Collection<VolleyStuff> findAll() {
-		return contents.values();
-	}
-
-
-	static {
-		Storage.create("blue net");
-	}
+	Collection<VolleyStuff> findAll();
 
 }
