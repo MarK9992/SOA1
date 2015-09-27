@@ -7,13 +7,13 @@ import java.util.HashMap;
 public class Storage {
 
 	// this mocks a database.
-	private static HashMap<String, Generator> contents = new HashMap<String, Generator>();
+	private static HashMap<String, VolleyStuff> contents = new HashMap<String, VolleyStuff>();
 
 	public static void create(String name) {
-		contents.put(name, new Generator(name));
+		contents.put(name, new VolleyStuff(name));
 	}
 
-	public static Generator read(String name) {
+	public static VolleyStuff read(String name) {
 		return contents.get(name);
 	}
 
@@ -21,13 +21,13 @@ public class Storage {
 		contents.remove(name);
 	}
 
-	public static Collection<Generator> findAll() {
+	public static Collection<VolleyStuff> findAll() {
 		return contents.values();
 	}
 
 
 	static {
-		Storage.create("demogen");
+		Storage.create("blue net");
 	}
 
 }
