@@ -36,6 +36,6 @@ http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/ja
     </jaxrs:server>
 
 
-    <bean id="volSvc" class="fr.unice.polytech.soa1.volley.VolleyStuffService"/>
+    <bean id="volSvc" class="fr.unice.polytech.soa1.volley.catalog.CatalogService"/>
 
 </blueprint>

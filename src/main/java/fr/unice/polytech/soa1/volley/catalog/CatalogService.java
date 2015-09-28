@@ -1,4 +1,6 @@
-package fr.unice.polytech.soa1.volley;
+package fr.unice.polytech.soa1.volley.catalog;
+
+import fr.unice.polytech.soa1.volley.Storage;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -7,12 +9,12 @@ import java.util.Collection;
 
 @Path("/stuff")
 @Produces(MediaType.APPLICATION_JSON)
-public class VolleyStuffService {
+public class CatalogService {
 
-    Storage storage;
+    Storage<VolleyStuff> storage;
 
-    public VolleyStuffService() {
-        storage = StorageMock.getInstance();
+    public CatalogService() {
+        storage = VolleyStuffStorageMock.getInstance();
     }
 
 	@POST

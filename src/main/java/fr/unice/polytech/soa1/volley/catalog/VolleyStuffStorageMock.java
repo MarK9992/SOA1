@@ -1,4 +1,6 @@
-package fr.unice.polytech.soa1.volley;
+package fr.unice.polytech.soa1.volley.catalog;
+
+import fr.unice.polytech.soa1.volley.Storage;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -8,22 +10,22 @@ import java.util.HashMap;
  *
  * This mocks a database.
  */
-public final class StorageMock implements Storage {
+public final class VolleyStuffStorageMock implements Storage<VolleyStuff> {
 
-    private static volatile StorageMock instance = null;
+    private static volatile VolleyStuffStorageMock instance = null;
 
     private static HashMap<String, VolleyStuff> contents;
 
-    private StorageMock() {
+    private VolleyStuffStorageMock() {
         contents = new HashMap<String, VolleyStuff>();
         create("blue net");
     }
 
-    public static StorageMock getInstance() {
+    public static VolleyStuffStorageMock getInstance() {
         if (instance == null) {
-            synchronized (StorageMock.class) {
+            synchronized (VolleyStuffStorageMock.class) {
                 if (instance == null) {
-                    instance = new StorageMock();
+                    instance = new VolleyStuffStorageMock();
                 }
             }
         }

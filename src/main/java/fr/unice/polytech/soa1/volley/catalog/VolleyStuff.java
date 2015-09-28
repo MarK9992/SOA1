@@ -1,4 +1,4 @@
-package fr.unice.polytech.soa1.volley;
+package fr.unice.polytech.soa1.volley.catalog;
 
 
 public class VolleyStuff {
