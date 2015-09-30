@@ -1,6 +1,5 @@
 package fr.unice.polytech.soa1.volley.catalog;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import fr.unice.polytech.soa1.volley.customexceptions.ConflictException;
 import fr.unice.polytech.soa1.volley.Storage;
 
@@ -18,14 +17,17 @@ public class CatalogService {
         storage = VolleyStuffStorageMock.getInstance();
     }
 
-	@POST
-	@Consumes(MediaType.TEXT_PLAIN)
-	public void createNewVolleyStuff(String name) {
-		if(storage.read(name) != null) {
-			throw new ConflictException("\"Existing name " + name + "\"");
-		}
-		storage.create(name);
-	}
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void createNewVolleyStuff(VolleyStuff stuffToCreate) {
+        if (stuffToCreate == null) {
+            throw new BadRequestException("no POST data");
+        }
+        if(storage.read(stuffToCreate.getName()) != null) {
+            throw new ConflictException("\"Existing name " + stuffToCreate.getName() + "\"");
+        }
+        storage.create(stuffToCreate.getName());
+    }
 
 	@GET
 	public Collection<VolleyStuff> getAvailableVolleyStuff() {

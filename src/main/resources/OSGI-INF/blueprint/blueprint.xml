@@ -17,22 +17,25 @@
 -->
 <!-- START SNIPPET: beans -->
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
-    xsi:schemaLocation="
-http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
-http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:jaxws="http://cxf.apache.org/blueprint/jawrs"
+           xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+           xmlns:cxf="http://cxf.apache.org/blueprint/core"
+           xsi:schemaLocation="
+             http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+             http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
+             http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
+             ">
 
     <jaxrs:server id="volleyStuffService" address="/volley">
-
         <jaxrs:serviceBeans>
             <ref component-id="volSvc"/>
         </jaxrs:serviceBeans>
-
         <jaxrs:providers>
             <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+            <bean class="com.fasterxml.jackson.jaxrs.base.JsonParseExceptionMapper"/>
+            <bean class="com.fasterxml.jackson.jaxrs.base.JsonMappingExceptionMapper"/>
         </jaxrs:providers>
-
     </jaxrs:server>
 
     <bean id="volSvc" class="fr.unice.polytech.soa1.volley.catalog.CatalogService"/>

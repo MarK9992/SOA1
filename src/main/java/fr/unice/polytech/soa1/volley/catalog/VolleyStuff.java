@@ -1,13 +1,17 @@
 package fr.unice.polytech.soa1.volley.catalog;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class VolleyStuff {
 
 	private String name;
 
 	private int cpt = 0;
 
-	public VolleyStuff(String s) {
+	@JsonCreator
+	public VolleyStuff(@JsonProperty("name") String s) {
 		this.name = s;
 	}
 
