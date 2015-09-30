@@ -71,6 +71,11 @@ public class CatalogService {
         return storage.read(name);
     }
 
+    /**
+     * Removes the volley stuff to the catalog matching the given name.
+     *
+     * @param name the name given as path parameter to look for
+     */
     @Path("/{name}")
     @DELETE
     public void deleteVolleyStuff(@PathParam("name") String name) {
@@ -79,5 +84,7 @@ public class CatalogService {
         }
         storage.delete(name);
     }
+
+    // TODO delete several ?
 
 }
