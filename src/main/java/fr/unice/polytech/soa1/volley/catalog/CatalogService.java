@@ -10,6 +10,9 @@ import java.util.List;
 
 /**
  * @author Marc Karassev
+ *         <p>
+ *         Catalog service, provides a REST API allowing to list, show, create, update or delete volley equipments
+ *         available on the store.
  */
 @Path("/catalog")
 @Produces(MediaType.APPLICATION_JSON)
@@ -21,38 +24,49 @@ public class CatalogService {
         storage = VolleyStuffStorageMock.getInstance();
     }
 
+    /**
+     * Adds new volley stuffs to catalog.
+     * Eats an array of JSON objects representing VolleyStuff objects, see VolleyStuff documentation.
+     *
+     * @param stuffToCreateList the deserialized list of VolleyStuff instances
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void createNewVolleyStuff(List<VolleyStuff> stuffToCreateList) {
         if (stuffToCreateList == null) {
             throw new BadRequestException("no POST data");
         }
-        for (VolleyStuff stuff: stuffToCreateList) {
-            if(storage.read(stuff.getName()) != null) {
+        for (VolleyStuff stuff : stuffToCreateList) {
+            if (storage.read(stuff.getName()) != null) {
                 throw new ConflictException("\"Existing name " + stuff.getName() + "\"");
             }
             storage.create(stuff);
         }
     }
 
-	@GET
-	public Collection<VolleyStuff> getAvailableVolleyStuff() {
-		return storage.findAll();
-	}
+    /**
+     * Gets all volley stuffs available in the store.
+     *
+     * @return a array of JSON objects representing VolleyStuff instances, see VolleyStuff documentation.
+     */
+    @GET
+    public Collection<VolleyStuff> getAvailableVolleyStuff() {
+        return storage.findAll();
+    }
 
-	@Path("/{name}")
-	@DELETE
-	public void deleteVolleyStuff(@PathParam("name") String name) {
-		if(storage.read(name) == null) {
-			throw new NotFoundException();
-		}
+    @Path("/{name}")
+    @DELETE
+    public void deleteVolleyStuff(@PathParam("name") String name) {
+        if (storage.read(name) == null) {
+            throw new NotFoundException();
+        }
         storage.delete(name);
-	}
+    }
 
     @Path("/{name}")
     @GET
     public String generateIdentifier(@PathParam("name") String name) {
-        if(storage.read(name) == null) {
+        if (storage.read(name) == null) {
             throw new NotFoundException();
         }
         return storage.read(name).run();

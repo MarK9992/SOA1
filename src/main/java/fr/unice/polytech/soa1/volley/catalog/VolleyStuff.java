@@ -7,6 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Marc Karassev
+ *         <p>
+ *         For deserialization, the JSON representation has two required properties "name" (string) and "price" (number)
+ *         and one optionnal property "description" (string).
+ *         { "name": "...", "price": xx.xx } or { "name": "...", "price": xx.xx, "description": "..." }
+ *         For serialization, the "description" property becomes mandatory.
  */
 public class VolleyStuff {
 
@@ -15,18 +20,18 @@ public class VolleyStuff {
     private String name;
     private double price;
     private String description;
-	private int cpt = 0;
+    private int cpt = 0;
 
     // Constructors
 
-	public VolleyStuff(String name, double price) {
+    public VolleyStuff(String name, double price) {
         this(name, price, "");
-	}
+    }
 
     @JsonCreator
     public VolleyStuff(@JsonProperty(value = "name", required = true) String name,
                        @JsonProperty(value = "price", required = true) double price,
-                       @JsonProperty("description")  String description) {
+                       @JsonProperty("description") String description) {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -34,10 +39,10 @@ public class VolleyStuff {
 
     // Methods
 
-	public String run() {
-		cpt++;
-		return name+cpt;
-	}
+    public String run() {
+        cpt++;
+        return name + cpt;
+    }
 
     @Override
     public String toString() {
@@ -46,9 +51,9 @@ public class VolleyStuff {
 
     // Getters and setters
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
     public double getPrice() {
         return price;
