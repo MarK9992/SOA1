@@ -5,11 +5,11 @@ import java.util.Collection;
 
 public interface Storage<T> {
 
-	void create(String name);
+	void create(T object);
 
-	T read(String name);
+	T read(String id);
 
-	void delete(String name);
+	void delete(String id);
 
 	Collection<T> findAll();
 

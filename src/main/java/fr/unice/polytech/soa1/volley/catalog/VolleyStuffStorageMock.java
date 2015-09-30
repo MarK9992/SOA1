@@ -18,7 +18,7 @@ public final class VolleyStuffStorageMock implements Storage<VolleyStuff> {
 
     private VolleyStuffStorageMock() {
         contents = new HashMap<String, VolleyStuff>();
-        create("blue net");
+        create(new VolleyStuff("blue net", 9.5));
     }
 
     public static VolleyStuffStorageMock getInstance() {
@@ -32,8 +32,8 @@ public final class VolleyStuffStorageMock implements Storage<VolleyStuff> {
         return instance;
     }
 
-    public void create(String name) {
-        contents.put(name, new VolleyStuff(name));
+    public void create(VolleyStuff stuff) {
+        contents.put(stuff.getName(), stuff);
     }
 
     public VolleyStuff read(String name) {

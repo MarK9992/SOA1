@@ -6,8 +6,12 @@ import fr.unice.polytech.soa1.volley.Storage;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Collection;
+import java.util.List;
 
-@Path("/stuff")
+/**
+ * @author Marc Karassev
+ */
+@Path("/catalog")
 @Produces(MediaType.APPLICATION_JSON)
 public class CatalogService {
 
@@ -19,14 +23,16 @@ public class CatalogService {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void createNewVolleyStuff(VolleyStuff stuffToCreate) {
-        if (stuffToCreate == null) {
+    public void createNewVolleyStuff(List<VolleyStuff> stuffToCreateList) {
+        if (stuffToCreateList == null) {
             throw new BadRequestException("no POST data");
         }
-        if(storage.read(stuffToCreate.getName()) != null) {
-            throw new ConflictException("\"Existing name " + stuffToCreate.getName() + "\"");
+        for (VolleyStuff stuff: stuffToCreateList) {
+            if(storage.read(stuff.getName()) != null) {
+                throw new ConflictException("\"Existing name " + stuff.getName() + "\"");
+            }
+            storage.create(stuff);
         }
-        storage.create(stuffToCreate.getName());
     }
 
 	@GET
