@@ -72,7 +72,7 @@ public class CatalogService {
     }
 
     /**
-     * Removes the volley stuff to the catalog matching the given name.
+     * Removes the volley stuff from the catalog matching the given name.
      *
      * @param name the name given as path parameter to look for
      */
@@ -86,5 +86,25 @@ public class CatalogService {
     }
 
     // TODO delete several ?
+
+    /**
+     * Updates the volley stuff in the store matching the given name.
+     *
+     * @param name the name given as path parameter to look for
+     * @param update the deserialized VolleyStuff object to use as update
+     */
+    @Path("/{name}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void updateStuff(@PathParam("name") String name, VolleyStuff update) {
+        if (update == null) {
+            throw new BadRequestException("no PUT data");
+        }
+        if (storage.read(name) == null) {
+            throw new NotFoundException();
+        }
+        storage.delete(name);
+        storage.create(update);
+    }
 
 }
