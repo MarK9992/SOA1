@@ -2,7 +2,6 @@ package fr.unice.polytech.soa1.volley.catalog;
 
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -20,7 +19,6 @@ public class VolleyStuff {
     private String name;
     private double price;
     private String description;
-    private int cpt = 0;
 
     // Constructors
 
@@ -39,11 +37,6 @@ public class VolleyStuff {
 
     // Methods
 
-    public String run() {
-        cpt++;
-        return name + cpt;
-    }
-
     @Override
     public String toString() {
         return "{ " + name + ", " + price + ", " + description + " }";
@@ -61,11 +54,6 @@ public class VolleyStuff {
 
     public String getDescription() {
         return description;
-    }
-
-    @JsonIgnore
-    public int getCpt() {
-        return cpt;
     }
 
 }

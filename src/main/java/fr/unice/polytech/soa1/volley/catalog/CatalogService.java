@@ -13,6 +13,8 @@ import java.util.List;
  *         <p>
  *         Catalog service, provides a REST API allowing to list, show, create, update or delete volley equipments
  *         available on the store.
+ *
+ *         TODO security for catalog management operations?
  */
 @Path("/catalog")
 @Produces(MediaType.APPLICATION_JSON)
@@ -54,6 +56,21 @@ public class CatalogService {
         return storage.findAll();
     }
 
+    /**
+     * Gets the VolleyStuff object matching the given name.
+     *
+     * @param name the name given as path parameter to look for
+     * @return a JSON object representing a VolleyStuff object, see VolleyStuff documentation
+     */
+    @Path("/{name}")
+    @GET
+    public VolleyStuff getThatStuff(@PathParam("name") String name) {
+        if (storage.read(name) == null) {
+            throw new NotFoundException();
+        }
+        return storage.read(name);
+    }
+
     @Path("/{name}")
     @DELETE
     public void deleteVolleyStuff(@PathParam("name") String name) {
@@ -61,15 +78,6 @@ public class CatalogService {
             throw new NotFoundException();
         }
         storage.delete(name);
-    }
-
-    @Path("/{name}")
-    @GET
-    public String generateIdentifier(@PathParam("name") String name) {
-        if (storage.read(name) == null) {
-            throw new NotFoundException();
-        }
-        return storage.read(name).run();
     }
 
 }
