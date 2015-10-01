@@ -27,9 +27,10 @@
              http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
              ">
 
-    <jaxrs:server id="volleyStuffService" address="/volley">
+    <jaxrs:server id="volleyOnTheBeach" address="/volley">
         <jaxrs:serviceBeans>
-            <ref component-id="volSvc"/>
+            <ref component-id="catalogService"/>
+            <ref component-id="accountService"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
@@ -38,6 +39,7 @@
         </jaxrs:providers>
     </jaxrs:server>
 
-    <bean id="volSvc" class="fr.unice.polytech.soa1.volley.catalog.CatalogService"/>
+    <bean id="catalogService" class="fr.unice.polytech.soa1.volley.catalog.CatalogService"/>
+    <bean id="accountService" class="fr.unice.polytech.soa1.volley.accounts.AccountServiceImpl"/>
 
 </blueprint>

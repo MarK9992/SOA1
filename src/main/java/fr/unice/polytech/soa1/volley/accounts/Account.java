@@ -1,6 +1,7 @@
 package fr.unice.polytech.soa1.volley.accounts;
 
-import fr.unice.polytech.soa1.volley.catalog.VolleyStuff;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,15 +16,18 @@ public class Account {
     private String login;
     private String password;
     private String address;
-    private Map<VolleyStuff, Integer> basket;
+    private Map<String, Integer> basket;
 
     // Constructors
 
-    public Account(String login, String password) {
+    @JsonCreator
+    public Account(@JsonProperty(value = "login", required = true) String login,
+                   @JsonProperty(value = "password", required = true) String password,
+                   @JsonProperty("address") String address) {
         this.login = login;
         this.password = password;
-        this.address = "";
-        this.basket = new HashMap<VolleyStuff, Integer>();
+        this.address = address;
+        this.basket = new HashMap<String, Integer>();
     }
 
     // Methods
@@ -32,5 +36,17 @@ public class Account {
 
     public String getLogin() {
         return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public Map<String, Integer> getBasket() {
+        return basket;
     }
 }
