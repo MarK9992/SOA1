@@ -3,6 +3,7 @@ package fr.unice.polytech.soa1.volley.orders;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -15,7 +16,7 @@ public class Orders {
 
     private static long orderCpt = 0;
     private String ref;
-    private String status;
+    private Status status;
     private String customer;
     private String deliveryAddress;
     private double amount;
@@ -23,25 +24,25 @@ public class Orders {
 
     // Constructors
 
-    @JsonCreator
-    public Orders(@JsonProperty(value = "customer", required = true) String accountName,
-                  @JsonProperty(value = "basket", required = true) Map<String, Integer> basket,
-                  @JsonProperty(value = "amount") double amount,
-                  @JsonProperty(value = "address") String address){
+    public Orders(String accountName,
+                  Map<String, Integer> basket,
+                  double amount,
+                  String address){
         ++orderCpt;
         this.ref = String.valueOf(orderCpt);
         this.customer = accountName;
         this.deliveryAddress = address;
-        this.status = Status.PAID.getDescription();
+        this.status = Status.PAID;
         this.amount = amount;
-        this.items = basket;
+        this.items = new HashMap<String, Integer>();
+        this.items.putAll(basket);
     }
 
     // Methods
 
     @Override
     public String toString() {
-        return "{ " + ref + ", " + customer + ", " + amount + ", " + amount + ", " + status + " }";
+        return "{ " + ref + ", " + customer + ", " + deliveryAddress+ ", " + amount + ", " + items + ", " + status + " }";
     }
 
     // Getters and setters
@@ -50,7 +51,9 @@ public class Orders {
 
     public String getRef() { return ref; }
 
-    public String getState() { return status; }
+    public Status getState() { return status; }
+
+    public void setStatus(Status newStatus) { this.status = newStatus; }
 
     public double getAmount() { return amount; }
 
