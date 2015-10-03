@@ -18,7 +18,7 @@ public final class VolleyStuffStorageMock implements Storage<VolleyStuff> {
 
     private VolleyStuffStorageMock() {
         contents = new HashMap<String, VolleyStuff>();
-        create(new VolleyStuff("blue net", 9.5));
+        create(new VolleyStuff("net", 9.5, "", Color.BLUE));
     }
 
     public static VolleyStuffStorageMock getInstance() {

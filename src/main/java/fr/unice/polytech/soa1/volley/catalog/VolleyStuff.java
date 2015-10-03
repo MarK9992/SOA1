@@ -14,25 +14,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class VolleyStuff {
 
+    private static int cpt = 0;
+
     // Attributes
 
     private String name;
     private double price;
     private String description;
+    private Color color;
 
     // Constructors
 
-    public VolleyStuff(String name, double price) {
-        this(name, price, "");
+    public VolleyStuff() {
+        this("stuff_" + cpt, 0.0, "", Color.BLACK);
     }
 
     @JsonCreator
     public VolleyStuff(@JsonProperty(value = "name", required = true) String name,
                        @JsonProperty(value = "price", required = true) double price,
-                       @JsonProperty("description") String description) {
+                       @JsonProperty("description") String description,
+                       @JsonProperty("color") Color color) {
+        cpt++;
         this.name = name;
         this.price = price;
         this.description = description;
+        this.color = color;
     }
 
     // Methods
@@ -55,5 +61,7 @@ public class VolleyStuff {
     public String getDescription() {
         return description;
     }
+
+    public Color getColor() { return color; }
 
 }

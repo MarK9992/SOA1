@@ -5,6 +5,7 @@ import fr.unice.polytech.soa1.volley.Storage;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -69,6 +70,21 @@ public class CatalogService {
             throw new NotFoundException();
         }
         return storage.read(name);
+    }
+
+    /**
+     * Gets the colors available for the VolleyStuff object matching the given name.
+     *
+     * @param name the name given as path parameter to look for
+     * @return a JSON array containing the available colors
+     */
+    @Path("/{name}/colors")
+    @GET
+    public List<Color> getAvailableColors(@PathParam("name") String name) {
+        if (storage.read(name) == null) {
+            throw new NotFoundException();
+        }
+        return Arrays.asList(Color.values());
     }
 
     /**
