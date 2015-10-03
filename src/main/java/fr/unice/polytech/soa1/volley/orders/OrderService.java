@@ -10,13 +10,9 @@ import java.util.Collection;
  */
 public interface OrderService {
 
-    @Path("/{accountId}")
-    @POST
-    Orders pay(@PathParam("accountId") String accountId, String address);
-
     @Path("/{orderRef}")
     @GET
-    Orders getOrder(@PathParam("orderRef") String reference);
+    Orders getOrderByRef(@PathParam("orderRef") String reference);
 
     @Path("/{customerId}")
     @GET
@@ -25,8 +21,7 @@ public interface OrderService {
     @GET
     Collection<Orders> getOrders();
 
-    @Path("/{orderRef}")
+    @Path("/{orderRef/status}")
     @PUT
-    void updateOrder(@PathParam("orderRef") String reference, Orders theOrder);
-
+    void updateStatus(@PathParam("orderRef") String orderReference, @PathParam("status") Status status);
 }

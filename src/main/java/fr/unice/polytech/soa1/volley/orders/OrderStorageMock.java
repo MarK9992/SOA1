@@ -15,7 +15,7 @@ public class OrderStorageMock implements Storage<Orders> {
 
     private static Map<String, Orders> contents;
 
-    public OrderStorageMock(){
+    private OrderStorageMock(){
         contents = new HashMap<String, Orders>();
     }
 

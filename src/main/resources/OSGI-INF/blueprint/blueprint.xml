@@ -32,6 +32,7 @@
             <ref component-id="catalogService"/>
             <ref component-id="accountService"/>
             <ref component-id="orderService"/>
+            <ref component-id="paymentService"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
@@ -43,5 +44,6 @@
     <bean id="catalogService" class="fr.unice.polytech.soa1.volley.catalog.CatalogService"/>
     <bean id="accountService" class="fr.unice.polytech.soa1.volley.accounts.AccountServiceImpl"/>
     <bean id="orderService" class="fr.unice.polytech.soa1.volley.orders.OrderServiceImpl"/>
+    <bean id="paymentService" class="fr.unice.polytech.soa1.volley.payments.PaymentServiceImpl"/>
 
 </blueprint>

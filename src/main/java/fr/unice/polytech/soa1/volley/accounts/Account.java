@@ -32,6 +32,10 @@ public class Account {
 
     // Methods
 
+    public void emptyBasket(){
+        this.basket.clear();
+    }
+
     // Getters and setters
 
     public String getLogin() {
