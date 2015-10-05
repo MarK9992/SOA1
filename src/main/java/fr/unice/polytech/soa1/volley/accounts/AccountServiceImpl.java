@@ -50,14 +50,14 @@ public class AccountServiceImpl implements AccountService {
 
     @Path("/{login}")
     @POST
-    @Consumes(MediaType.TEXT_PLAIN)
-    public Account login(@PathParam("login") String login, String password) {
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Account login(@PathParam("login") String login, PasswordWrapper password) {
         Account account = storage.read(login);
 
         if (account == null) {
             throw new NotFoundException();
         }
-        if (!account.getPassword().equals(password)) {
+        if (!account.getPassword().equals(password.getValue())) {
             throw new BadRequestException("invalid password");
         }
         return account;
