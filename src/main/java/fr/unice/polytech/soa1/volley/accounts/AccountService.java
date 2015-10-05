@@ -17,7 +17,7 @@ public interface AccountService {
 
     @Path("/{login}")
     @POST
-    Account login(@PathParam("login") String login, String password);
+    Account login(@PathParam("login") String login, PasswordWrapper password);
 
     @Path("/{login}")
     @PUT
