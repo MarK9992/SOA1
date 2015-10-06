@@ -1,11 +1,7 @@
-<con:soapui-project id="b971bbec-eb33-4537-b8c8-f4c819dfc304" activeEnvironment="Default" name="Volley on the Beach"
-                    soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL"
-                    xmlns:con="http://eviware.com/soapui/config">
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b971bbec-eb33-4537-b8c8-f4c819dfc304" activeEnvironment="Default" name="Volley on the Beach" soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config">
     <con:settings/>
-    <con:interface xsi:type="con:RestService" id="d61f3dac-8286-4feb-951e-6e2bb2855319"
-                   wadlVersion="http://wadl.dev.java.net/2009/02" name="volley?_wadl" type="rest" basePath="/cxf/volley"
-                   definitionUrl="http://localhost:8181/cxf/volley?_wadl"
-                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:interface xsi:type="con:RestService" id="d61f3dac-8286-4feb-951e-6e2bb2855319" wadlVersion="http://wadl.dev.java.net/2009/02" name="volley?_wadl" type="rest" basePath="/cxf/volley" definitionUrl="http://localhost:8181/cxf/volley?_wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <con:settings/>
         <con:definitionCache type="TEXT" rootPart="http://localhost:8181/cxf/volley?_wadl">
             <con:part>
@@ -218,8 +214,7 @@
                 <con:method name="DELETE" id="568f7a2c-d1f6-4bc3-a80f-dc05d0f19460" method="DELETE">
                     <con:settings/>
                     <con:parameters/>
-                    <con:request name="Request 1" id="5eac8f42-9031-4134-9faa-0a27b6d5a644"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="5eac8f42-9031-4134-9faa-0a27b6d5a644" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -234,8 +229,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="0ee79e6f-33d2-44d1-ba28-274df8f6228e"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="0ee79e6f-33d2-44d1-ba28-274df8f6228e" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -250,8 +244,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="68bf820c-3452-482f-bce9-13d250152675"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="68bf820c-3452-482f-bce9-13d250152675" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -277,8 +270,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="a236349a-3d4e-4cd1-af16-2459e9d6f268"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="a236349a-3d4e-4cd1-af16-2459e9d6f268" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -338,8 +330,7 @@
                 <con:method name="DELETE" id="0006c3b2-54cd-4c6f-bfb6-f86360844630" method="DELETE">
                     <con:settings/>
                     <con:parameters/>
-                    <con:request name="Request 1" id="4978d3fb-2939-47fd-b44c-9b7ae3e1be53"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="4978d3fb-2939-47fd-b44c-9b7ae3e1be53" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -354,8 +345,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="27119066-22a3-419b-8ef9-941c902c5092"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="27119066-22a3-419b-8ef9-941c902c5092" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -376,8 +366,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="779ae9c9-833c-4386-9633-c8068b91f1a6"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="779ae9c9-833c-4386-9633-c8068b91f1a6" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -392,8 +381,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="b981c69c-91b0-4816-872e-2ca2d42ab8e5"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="b981c69c-91b0-4816-872e-2ca2d42ab8e5" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -434,8 +422,7 @@
         <con:resource name="/orders" path="/orders" id="11fea8eb-0444-476e-aef7-6721574341b6">
             <con:settings/>
             <con:parameters/>
-            <con:resource name="/account/{customerId}" path="/account/{customerId}"
-                          id="33875562-0c40-4077-b503-9003cfe853fb">
+            <con:resource name="/account/{customerId}" path="/account/{customerId}" id="33875562-0c40-4077-b503-9003cfe853fb">
                 <con:settings/>
                 <con:parameters>
                     <con:parameter>
@@ -454,8 +441,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="0fb2112a-b4e3-413a-85e8-f5fbad339bd3"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="0fb2112a-b4e3-413a-85e8-f5fbad339bd3" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -481,16 +467,14 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="acb6df35-e013-4940-a8bc-cf9fd902f137"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="acb6df35-e013-4940-a8bc-cf9fd902f137" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
                     </con:request>
                 </con:method>
             </con:resource>
-            <con:resource name="/{orderRef}/{status}" path="/{orderRef}/{status}"
-                          id="8db9950a-af85-4377-a679-203b07c80618">
+            <con:resource name="/{orderRef}/{status}" path="/{orderRef}/{status}" id="8db9950a-af85-4377-a679-203b07c80618">
                 <con:settings/>
                 <con:parameters>
                     <con:parameter>
@@ -516,8 +500,7 @@
                 <con:method name="PUT" id="be22870c-84d8-4f26-9672-73e7ff05214b" method="PUT">
                     <con:settings/>
                     <con:parameters/>
-                    <con:request name="Request 1" id="80566e9f-2598-4d0e-9341-97e799a799c4"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="80566e9f-2598-4d0e-9341-97e799a799c4" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -562,8 +545,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="eb6f08c3-0866-4d63-b8ec-829a2a693217"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="eb6f08c3-0866-4d63-b8ec-829a2a693217" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -578,8 +560,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="22587aab-4737-477a-997d-f5f58e119e13"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="22587aab-4737-477a-997d-f5f58e119e13" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -594,8 +575,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="00012d6e-fd93-4209-b35a-374f7d6b8016"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="00012d6e-fd93-4209-b35a-374f7d6b8016" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -606,8 +586,7 @@
         <con:resource name="/payments" path="/payments" id="4e60b3ef-5eab-40a0-ab22-5a8a9115efe2">
             <con:settings/>
             <con:parameters/>
-            <con:resource name="/account/{accountId}" path="/account/{accountId}"
-                          id="2ee37262-bb2d-48a9-ad21-1b987e1ec93a">
+            <con:resource name="/account/{accountId}" path="/account/{accountId}" id="2ee37262-bb2d-48a9-ad21-1b987e1ec93a">
                 <con:settings/>
                 <con:parameters>
                     <con:parameter>
@@ -626,16 +605,14 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="d994380a-b955-4c25-bdfe-b55aa132f74c"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="d994380a-b955-4c25-bdfe-b55aa132f74c" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
                     </con:request>
                 </con:method>
             </con:resource>
-            <con:resource name="/payment/{paymentId}" path="/payment/{paymentId}"
-                          id="aed48c3d-9294-40fd-864d-c81b2786df28">
+            <con:resource name="/payment/{paymentId}" path="/payment/{paymentId}" id="aed48c3d-9294-40fd-864d-c81b2786df28">
                 <con:settings/>
                 <con:parameters>
                     <con:parameter>
@@ -654,8 +631,7 @@
                         <con:element xsi:nil="true"/>
                         <con:description xsi:nil="true"/>
                     </con:representation>
-                    <con:request name="Request 1" id="88f40e0b-9588-469b-98d1-a7379bab8470"
-                                 mediaType="application/json">
+                    <con:request name="Request 1" id="88f40e0b-9588-469b-98d1-a7379bab8470" mediaType="application/json">
                         <con:settings/>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:parameters/>
@@ -711,27 +687,23 @@
             </con:method>
         </con:resource>
     </con:interface>
-    <con:testSuite id="628d1c9b-9f76-4aa0-a7a7-660b5efaf080" name="Create Account">
+    <con:testSuite id="628d1c9b-9f76-4aa0-a7a7-660b5efaf080" name="Account Management">
         <con:settings/>
         <con:runType>SEQUENTIAL</con:runType>
-        <con:testCase id="930f12d5-6c8a-4037-9cfc-521a324195d6" failOnError="true" failTestCaseOnErrors="true"
-                      keepSession="false" maxResults="0" name="Valid account creation" searchProperties="true">
+        <con:testCase id="930f12d5-6c8a-4037-9cfc-521a324195d6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Valid account management" searchProperties="true">
             <con:settings/>
             <con:testStep type="restrequest" name="POST valid account" id="60dd2d6d-00b7-4b5e-a240-89bc11910732">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="POST valid account" id="d2cc760b-1da9-409f-940f-56c3f7f64432"
-                                     mediaType="application/json" postQueryString="false">
+                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST valid account" id="d2cc760b-1da9-409f-940f-56c3f7f64432" mediaType="application/json" postQueryString="false">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
                         <con:encoding>UTF-8</con:encoding>
                         <con:endpoint>http://localhost:8181</con:endpoint>
-                        <con:request>{"login": "new user", "password": "new pwd", "address": "here"}</con:request>
+                        <con:request>{"login": "lilly", "password": "new pwd", "address": "herez"}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/accounts</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="338d110a-57ca-4450-bca4-dccfa20029df"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="338d110a-57ca-4450-bca4-dccfa20029df" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>204</codes>
                             </con:configuration>
@@ -748,9 +720,7 @@
             <con:testStep type="transfer" name="Property Transfer" id="08905f6e-5439-49ae-8a07-91e2ff30c851">
                 <con:settings/>
                 <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"
-                                   ignoreEmpty="false" transferToAll="false" entitize="false"
-                                   transferChildNodes="false">
+                    <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
                         <con:name>1</con:name>
                         <con:sourceType>Request</con:sourceType>
                         <con:sourceStep>POST valid account</con:sourceStep>
@@ -760,14 +730,12 @@
                         <con:type>JSONPATH</con:type>
                         <con:upgraded>true</con:upgraded>
                     </con:transfers>
-                </con:config>
+                <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>2</con:name><con:sourceType>Request</con:sourceType><con:sourceStep>POST valid account</con:sourceStep><con:sourcePath>$.login</con:sourcePath><con:targetType>login</con:targetType><con:targetStep>PUT - Address modification</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>3</con:name><con:sourceType>Request</con:sourceType><con:sourceStep>POST valid account</con:sourceStep><con:sourcePath>$.login</con:sourcePath><con:targetType>login</con:targetType><con:targetStep>DELETE - Delete Lilly's account</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config>
             </con:testStep>
             <con:testStep type="restrequest" name="GET created account" id="3456834c-b6a6-41db-9b74-5fa0540dd43c">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="GET" resourcePath="/cxf/volley/accounts/{login}"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="GET created account" id="35a2f4d2-264f-4f6b-b796-0bc255fa3f0d"
-                                     mediaType="application/json">
+                <con:config service="volley?_wadl" methodName="GET" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET created account" id="35a2f4d2-264f-4f6b-b796-0bc255fa3f0d" mediaType="application/json">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
@@ -775,42 +743,64 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/>
                         <con:originalUri>http://localhost/cxf/volley/accounts/new%20user</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="da927102-807e-47a6-a679-fd87c55eed7a"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="da927102-807e-47a6-a679-fd87c55eed7a" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>200</codes>
                             </con:configuration>
                         </con:assertion>
                         <con:assertion type="Simple Contains" id="4d5b54e9-1162-4464-960b-8f11283b9983" name="Contains">
-                            <con:configuration>
-                                <token>^\{"login":"new user","password":"new pwd","address":"here","basket":\{\}\}$
-                                </token>
-                                <ignoreCase>false</ignoreCase>
-                                <useRegEx>true</useRegEx>
-                            </con:configuration>
+                            <con:configuration><token>^\{"login":"lilly","password":"new pwd","address":"herez","basket":\{\}\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration>
                         </con:assertion>
                         <con:credentials>
                             <con:authType>No Authorization</con:authType>
                         </con:credentials>
                         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
                         <con:jmsPropertyConfig/>
-                        <con:parameters>
-                            <entry key="login" value="new user" xmlns="http://eviware.com/soapui/config"/>
-                        </con:parameters>
+                        <con:parameters><entry key="login" value="lilly" xmlns="http://eviware.com/soapui/config"/></con:parameters>
                     </con:restRequest>
                 </con:config>
             </con:testStep>
-            <con:properties/>
+            <con:testStep type="restrequest" name="PUT - Address modification" id="61573367-dfaf-4493-9ae9-9050c1e053a5"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="PUT - Address modification" id="b981c69c-91b0-4816-872e-2ca2d42ab8e5" mediaType="application/json" postQueryString="false">
+                        <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request>{"login":"lilly","password":"new pwd","address":"home sweet home"}</con:request><con:originalUri>http://localhost/cxf/volley/accounts/lilly</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="login" value="lilly" xmlns="http://eviware.com/soapui/config"/></con:parameters>
+                    </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GET display account 2" id="1154e395-b4c2-48e7-8f5f-91659e9968f2">
+                <con:settings/>
+                <con:config service="volley?_wadl" methodName="GET" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET display account 2" id="35a2f4d2-264f-4f6b-b796-0bc255fa3f0d" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/cxf/volley/accounts/new%20user</con:originalUri>
+                        <con:assertion type="Valid HTTP Status Codes" id="da927102-807e-47a6-a679-fd87c55eed7a" name="Valid HTTP Status Codes">
+                            <con:configuration><codes>200</codes></con:configuration>
+                        </con:assertion>
+                        <con:assertion type="Simple Contains" id="4d5b54e9-1162-4464-960b-8f11283b9983" name="Contains">
+                            <con:configuration><token>^\{"login":"lilly","password":"new pwd","address":"home sweet home","basket":\{\}\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters><entry key="login" value="lilly" xmlns="http://eviware.com/soapui/config"/></con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep><con:testStep type="restrequest" name="DELETE - Delete Lilly's account" id="76bb5e71-f48c-45f4-be2f-bea4d495d72e"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="DELETE" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DELETE - Delete Lilly's account" id="4978d3fb-2939-47fd-b44c-9b7ae3e1be53" mediaType="application/json" postQueryString="false">
+                        <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/><con:originalUri>http://localhost/cxf/volley/accounts/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="login" value="lilly" xmlns="http://eviware.com/soapui/config"/></con:parameters>
+                    </con:restRequest></con:config></con:testStep><con:properties/>
         </con:testCase>
-        <con:testCase id="8b39edc1-e3c6-40e2-972a-7c35a7034698" failOnError="true" failTestCaseOnErrors="true"
-                      keepSession="false" maxResults="0" name="Existent account creation" searchProperties="true">
+        <con:testCase id="8b39edc1-e3c6-40e2-972a-7c35a7034698" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Existent account creation" searchProperties="true">
             <con:settings/>
             <con:testStep type="restrequest" name="GET all accounts" id="27ff9284-a39d-4b32-999e-414981ccac9b">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="GET" resourcePath="/cxf/volley/accounts"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="GET all accounts" id="8a60c1b1-e0eb-4e72-8527-1aabfff9d70a"
-                                     mediaType="application/json">
+                <con:config service="volley?_wadl" methodName="GET" resourcePath="/cxf/volley/accounts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET all accounts" id="8a60c1b1-e0eb-4e72-8527-1aabfff9d70a" mediaType="application/json">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
@@ -818,20 +808,13 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/>
                         <con:originalUri>http://localhost/cxf/volley/accounts</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="1388a165-dc36-4a90-9f17-382460b697d0"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="1388a165-dc36-4a90-9f17-382460b697d0" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>200</codes>
                             </con:configuration>
                         </con:assertion>
                         <con:assertion type="Simple Contains" id="ef1deb10-3f5c-4274-8a19-1a4e42aec253" name="Contains">
-                            <con:configuration>
-                                <token>
-                                    ^\[(\{.*\},)*\{"login":"admin","password":"admin","address":"","basket":\{\}\}(,\{.*\})*\]$
-                                </token>
-                                <ignoreCase>false</ignoreCase>
-                                <useRegEx>true</useRegEx>
-                            </con:configuration>
+                            <con:configuration><token>^\[(\{.*\},)*\{"login":"admin","password":"admin","address":"","basket":\{\}\}(,\{.*\})*\]$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration>
                         </con:assertion>
                         <con:credentials>
                             <con:authType>No Authorization</con:authType>
@@ -845,9 +828,7 @@
             <con:testStep type="transfer" name="Property Transfer" id="2782d783-9a97-4a83-af49-68eff8360bc9">
                 <con:settings/>
                 <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"
-                                   ignoreEmpty="false" transferToAll="false" entitize="false"
-                                   transferChildNodes="false">
+                    <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
                         <con:name>1</con:name>
                         <con:sourceType>Response</con:sourceType>
                         <con:sourceStep>GET all accounts</con:sourceStep>
@@ -861,26 +842,21 @@
                     </con:transfers>
                 </con:config>
             </con:testStep>
-            <con:testStep type="restrequest" name="POST create existent account"
-                          id="f6f2ef8d-3ad3-4611-901f-257fbf05c38f">
+            <con:testStep type="restrequest" name="POST create existent account" id="f6f2ef8d-3ad3-4611-901f-257fbf05c38f">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="POST create existent account" id="fcec8095-b13d-4e41-84aa-0b9e3a66fd0e"
-                                     mediaType="application/json" postQueryString="false">
+                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST create existent account" id="fcec8095-b13d-4e41-84aa-0b9e3a66fd0e" mediaType="application/json" postQueryString="false">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
                         <con:encoding>UTF-8</con:encoding>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request>{
-                            "password": "pwd",
-                            "login": "admin"
-                            }
-                        </con:request>
+   "login": "admin",
+   "password": "pwd"
+}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/accounts</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="0887cda1-e0a2-4ba0-899c-09793bf85987"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="0887cda1-e0a2-4ba0-899c-09793bf85987" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>409</codes>
                             </con:configuration>
@@ -908,15 +884,12 @@
     <con:testSuite id="869041aa-0f93-4e5f-9269-ed5197303587" name="Login">
         <con:settings/>
         <con:runType>SEQUENTIAL</con:runType>
-        <con:testCase id="d8b2bc97-8ecc-4130-ae84-237e82cbfafa" failOnError="true" failTestCaseOnErrors="true"
-                      keepSession="false" maxResults="0" name="Success" searchProperties="true">
+        <con:testCase id="d8b2bc97-8ecc-4130-ae84-237e82cbfafa" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Success" searchProperties="true">
             <con:settings/>
             <con:testStep type="restrequest" name="POST successful login" id="2e948f7a-7525-48e8-99de-8837c91bb2c9">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts/{login}"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="POST login" id="5520197e-9f18-4bc8-b11c-7bacfd30890f"
-                                     mediaType="application/json" postQueryString="false">
+                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST successful login" id="5520197e-9f18-4bc8-b11c-7bacfd30890f" mediaType="application/json" postQueryString="false">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
@@ -924,8 +897,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request>{"value": "admin"}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/accounts/admin</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="fa300b86-74e7-4335-9e0d-24679e3f2d22"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="fa300b86-74e7-4335-9e0d-24679e3f2d22" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>200</codes>
                             </con:configuration>
@@ -950,15 +922,12 @@
             </con:testStep>
             <con:properties/>
         </con:testCase>
-        <con:testCase id="628e0d11-578f-4227-b77e-8ee2aebf89b0" failOnError="true" failTestCaseOnErrors="true"
-                      keepSession="false" maxResults="0" name="Failure" searchProperties="true">
+        <con:testCase id="628e0d11-578f-4227-b77e-8ee2aebf89b0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Failure" searchProperties="true">
             <con:settings/>
             <con:testStep type="restrequest" name="POST unvalid pasword" id="98072660-cbe9-4b49-85e4-d1184422d28c">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts/{login}"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="POST unvalid paswword" id="d421a880-5c62-42a8-ba39-9d9f294e6e9d"
-                                     mediaType="application/json" postQueryString="false">
+                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST unvalid pasword" id="d421a880-5c62-42a8-ba39-9d9f294e6e9d" mediaType="application/json" postQueryString="false">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
@@ -966,8 +935,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request>{"value": "root"}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/accounts/admin</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="b3d159c4-b212-4e6f-b0c2-cd8471de8d87"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="b3d159c4-b212-4e6f-b0c2-cd8471de8d87" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>400</codes>
                             </con:configuration>
@@ -985,10 +953,8 @@
             </con:testStep>
             <con:testStep type="restrequest" name="POST nonexistent login" id="a9461280-942e-4cc1-803d-7462d34e4e2f">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts/{login}"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="POST nonexistent login" id="d7b56ec4-1e66-4f7d-b2cf-b8e7480cac82"
-                                     mediaType="application/json" postQueryString="false">
+                <con:config service="volley?_wadl" methodName="POST" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST nonexistent login" id="d7b56ec4-1e66-4f7d-b2cf-b8e7480cac82" mediaType="application/json" postQueryString="false">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
@@ -996,8 +962,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request>{"value":"pwd"}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/accounts/nonexistent</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="f0a12c0a-b276-4bd5-88b6-4d4786b851a5"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="f0a12c0a-b276-4bd5-88b6-4d4786b851a5" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>404</codes>
                             </con:configuration>
@@ -1020,13 +985,11 @@
     <con:testSuite id="94db7f5f-0d1f-43c7-8f3a-00a785d5f1dd" name="Update Account">
         <con:settings/>
         <con:runType>SEQUENTIAL</con:runType>
-        <con:testCase id="103fcb66-c0b2-438e-8eb0-764061cff40a" failOnError="true" failTestCaseOnErrors="true"
-                      keepSession="false" maxResults="0" name="Successful update" searchProperties="true">
+        <con:testCase id="103fcb66-c0b2-438e-8eb0-764061cff40a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Successful update" searchProperties="true">
             <con:settings/>
             <con:testStep type="properties" name="properties" id="a421fd01-9160-4eaf-8006-ff55d4eb1cfb">
                 <con:settings/>
-                <con:config xsi:type="con:PropertiesStep" saveFirst="true"
-                            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <con:properties>
                         <con:property>
                             <con:name>updated account</con:name>
@@ -1038,10 +1001,8 @@
             </con:testStep>
             <con:testStep type="restrequest" name="PUT successful update" id="ee72441e-b984-405c-85bd-9da890246984">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="PUT" resourcePath="/cxf/volley/accounts/{login}"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="PUT successful update" id="083b106d-d3f6-4226-b633-9d9e8fa095fb"
-                                     mediaType="application/json" postQueryString="false">
+                <con:config service="volley?_wadl" methodName="PUT" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="PUT successful update" id="083b106d-d3f6-4226-b633-9d9e8fa095fb" mediaType="application/json" postQueryString="false">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
@@ -1049,8 +1010,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request>${properties#updated account#$}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/accounts/admin</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="c1d3f6f2-f385-4c05-b97f-e704630190ed"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="c1d3f6f2-f385-4c05-b97f-e704630190ed" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>204</codes>
                             </con:configuration>
@@ -1069,23 +1029,19 @@
             <con:testStep type="transfer" name="Property Transfer" id="dd7184c8-c37d-4793-bcb2-0d9073a899f7">
                 <con:settings/>
                 <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"
-                                   ignoreEmpty="false" transferToAll="false" entitize="false"
-                                   transferChildNodes="false">
+                    <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
                         <con:name>1</con:name>
                         <con:sourceType>login</con:sourceType>
                         <con:sourceStep>PUT successful update</con:sourceStep>
                         <con:targetType>login</con:targetType>
-                        <con:upgraded>true</con:upgraded>
+                        <con:targetStep>GET updated account</con:targetStep><con:upgraded>true</con:upgraded>
                     </con:transfers>
                 </con:config>
             </con:testStep>
             <con:testStep type="restrequest" name="GET updated account" id="300d7c20-e0f4-44aa-85e4-9838f5ee5992">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="GET" resourcePath="/cxf/volley/accounts/{login}"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="GET updated account" id="c4897588-aeec-424d-b92c-5ae88e99a78a"
-                                     mediaType="application/json">
+                <con:config service="volley?_wadl" methodName="GET" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET updated account" id="c4897588-aeec-424d-b92c-5ae88e99a78a" mediaType="application/json">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
@@ -1093,8 +1049,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/>
                         <con:originalUri>http://localhost/cxf/volley/accounts/admin</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="607680e2-37c8-4941-a7d6-b74785931df5"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="607680e2-37c8-4941-a7d6-b74785931df5" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>200</codes>
                             </con:configuration>
@@ -1106,8 +1061,7 @@
                                 <useRegEx>false</useRegEx>
                             </con:configuration>
                         </con:assertion>
-                        <con:assertion type="Simple Contains" id="8a547a79-81ce-4a80-a912-160d3caa468b"
-                                       name="Contains 1">
+                        <con:assertion type="Simple Contains" id="8a547a79-81ce-4a80-a912-160d3caa468b" name="Contains 1">
                             <con:configuration>
                                 <token>^\{".*\}$</token>
                                 <ignoreCase>false</ignoreCase>
@@ -1127,16 +1081,12 @@
             </con:testStep>
             <con:properties/>
         </con:testCase>
-        <con:testCase id="df1d3640-4a16-4410-bab5-71bc48fee0ce" failOnError="true" failTestCaseOnErrors="true"
-                      keepSession="false" maxResults="0" name="Failure" searchProperties="true">
+        <con:testCase id="df1d3640-4a16-4410-bab5-71bc48fee0ce" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Failure" searchProperties="true">
             <con:settings/>
-            <con:testStep type="restrequest" name="PUT update nonexistent account"
-                          id="f804e278-60af-4d68-94fb-acd7fbcd2b24">
+            <con:testStep type="restrequest" name="PUT update nonexistent account" id="f804e278-60af-4d68-94fb-acd7fbcd2b24">
                 <con:settings/>
-                <con:config service="volley?_wadl" methodName="PUT" resourcePath="/cxf/volley/accounts/{login}"
-                            xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="PUT update nonexistent account" id="0eb9b68b-d22b-478e-8d1f-de28c89c8bd8"
-                                     mediaType="application/json" postQueryString="false">
+                <con:config service="volley?_wadl" methodName="PUT" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="PUT update nonexistent account" id="0eb9b68b-d22b-478e-8d1f-de28c89c8bd8" mediaType="application/json" postQueryString="false">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
@@ -1144,8 +1094,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request>{"login":"hello","password":"bye"}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/accounts/</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="a367f880-afaf-466d-a26f-0a893dfdc25d"
-                                       name="Valid HTTP Status Codes">
+                        <con:assertion type="Valid HTTP Status Codes" id="a367f880-afaf-466d-a26f-0a893dfdc25d" name="Valid HTTP Status Codes">
                             <con:configuration>
                                 <codes>404</codes>
                             </con:configuration>
@@ -1165,7 +1114,254 @@
         </con:testCase>
         <con:properties/>
     </con:testSuite>
-    <con:properties/>
+    <con:testSuite id="1e8d4011-4da1-4675-b085-6521cdceda42" name="Volley Testsuite">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="68fe48ba-53c4-456d-bb01-1b17a382215c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Gestion de compte Testcase" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="GET - Pre scenario" id="26c025d3-94c7-4989-b2e7-73127f20d316">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET - Pre scenario" id="11cacfc4-a4c3-49b3-ab65-038693c59731" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="POST - Creation compte" id="967fb213-88d2-47b6-a120-5c92d61b838a">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST - Creation compte" id="dedfdeea-a1bd-4c3f-810a-fc7ed53c907f" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request>{"login":"toto", "password":"pwd"}</con:request>
+                        <con:originalUri>http://localhost/cxf/volley/accounts</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="PUT - Modification adresse" id="045410b3-bf7d-4399-97f9-8a122cb1ac5c">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="PUT - Modification adresse" id="b981c69c-91b0-4816-872e-2ca2d42ab8e5" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request>{"login":"toto", "password":"pwd", "address":"home sweet home"}</con:request>
+                        <con:originalUri>http://localhost/cxf/volley/accounts/toto</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <entry key="login" value="toto" xmlns="http://eviware.com/soapui/config"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="GET - Visualisation du compte" id="1595ddb0-9c2a-406c-8789-36193a1f530e">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET - Visualisation du compte" id="27119066-22a3-419b-8ef9-941c902c5092" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/cxf/volley/accounts/toto</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <entry key="login" value="toto" xmlns="http://eviware.com/soapui/config"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="DELETE - Suppression du compte" id="6fe65d15-736d-468f-90e9-bb1984648660">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="DELETE" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="DELETE - Suppression du compte" id="4978d3fb-2939-47fd-b44c-9b7ae3e1be53" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/cxf/volley/accounts/toto</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <entry key="login" value="toto" xmlns="http://eviware.com/soapui/config"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="GET - Post scenario" id="c9dadcf1-6b6a-4571-aea1-c3715b7f6c9e">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET - Post scenario" id="11cacfc4-a4c3-49b3-ab65-038693c59731" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/cxf/volley/accounts</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="df3658bd-7202-4121-acc5-83548241f2b8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Passage de commande Testcase" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="POST - Creation compte de Jean" id="8cc01b19-15de-43e4-8705-a5e37f33a134">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST - Creation compte de Jean" id="dedfdeea-a1bd-4c3f-810a-fc7ed53c907f" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="POST - Connexion au compte de Jean" id="307204e4-1cf6-4b2f-b92a-baa171b307e1">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST - Connexion au compte de Jean" id="779ae9c9-833c-4386-9633-c8068b91f1a6" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request>{"value":"jambon"}</con:request>
+                        <con:originalUri>http://localhost/cxf/volley/accounts/jean</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <entry key="login" value="jean" xmlns="http://eviware.com/soapui/config"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="GET - Visualisation catalogue" id="58cbd612-5528-4588-8f1d-69519c66fefb">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/catalog" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET - Visualisation catalogue" id="68d8723e-775a-497d-90f3-ee07f9159c0f" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/cxf/volley/catalog</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="POST - Ajout filet au panier" id="19e0b7ca-4858-4a74-b9e0-199d3b3826ef">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/basket/{login}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST - Ajout filet au panier" id="22587aab-4737-477a-997d-f5f58e119e13" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request>{"name":"blue net", "quantity":2}</con:request>
+                        <con:originalUri>http://localhost/cxf/volley/basket/jean</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <entry key="login" value="jean" xmlns="http://eviware.com/soapui/config"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="GET - Visualisation panier de Jean" id="e317d091-2511-4894-8601-27051bf62754">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/basket/{login}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="GET - Visualisation panier de Jean" id="eb6f08c3-0866-4d63-b8ec-829a2a693217" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/cxf/volley/basket/jean</con:originalUri>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <entry key="login" value="jean" xmlns="http://eviware.com/soapui/config"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="POST - Paiement de la commande" id="fb678ade-274a-401b-aed1-cfb9a10f5ed3">
+                <con:settings/>
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/payments/{accountId}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="POST - Paiement de la commande" id="ac1cfcbe-86b3-436e-b30b-55254d605931" mediaType="*/*" postQueryString="false">
+                        <con:settings/>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties/>
+    </con:testSuite><con:properties/>
     <con:wssContainer/>
     <con:oAuth2ProfileContainer/>
-</con:soapui-project>
+<con:sensitiveInformation/></con:soapui-project>
