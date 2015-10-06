@@ -3,6 +3,7 @@ package fr.unice.polytech.soa1.volley.payments;
 import fr.unice.polytech.soa1.volley.Storage;
 import fr.unice.polytech.soa1.volley.accounts.Account;
 import fr.unice.polytech.soa1.volley.accounts.AccountStorageMock;
+import fr.unice.polytech.soa1.volley.basket.BasketItem;
 import fr.unice.polytech.soa1.volley.catalog.VolleyStuff;
 import fr.unice.polytech.soa1.volley.catalog.VolleyStuffStorageMock;
 import fr.unice.polytech.soa1.volley.orders.OrderStorageMock;
@@ -12,7 +13,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Map;
+import java.util.List;
 
 /**
  * @author: Laureen Ginier
@@ -44,7 +45,7 @@ public class PaymentServiceImpl implements PaymentService {
         if(account == null){
             throw new NotFoundException("The given account does not exist");
         }
-        Map<String, Integer> basket = account.getBasket();
+        List<BasketItem> basket = account.getBasket();
         if(basket.isEmpty()) {
             throw new ForbiddenException("\"The basket is empty\"");
         }
@@ -105,10 +106,10 @@ public class PaymentServiceImpl implements PaymentService {
         return payment;
     }
 
-    private double calculateAmount(Map<String, Integer> basket){
+    private double calculateAmount(List<BasketItem> basket){
         double amount = 0;
-        for(Map.Entry<String, Integer> entry : basket.entrySet()) {
-            amount += volleyStuffStorage.read(entry.getKey()).getPrice() * entry.getValue();
+        for(BasketItem item: basket) {
+            amount += volleyStuffStorage.read(item.getName()).getPrice() * item.getQuantity();
         }
         return amount;
     }

@@ -1,10 +1,9 @@
 package fr.unice.polytech.soa1.volley.orders;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import fr.unice.polytech.soa1.volley.basket.BasketItem;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : Laureen Ginier.
@@ -20,12 +19,12 @@ public class Orders {
     private String customer;
     private String deliveryAddress;
     private double amount;
-    private Map<String, Integer> items;
+    private List<BasketItem> items;
 
     // Constructors
 
     public Orders(String accountName,
-                  Map<String, Integer> basket,
+                  List<BasketItem> basket,
                   double amount,
                   String address){
         ++orderCpt;
@@ -34,8 +33,8 @@ public class Orders {
         this.deliveryAddress = address;
         this.status = Status.PAID;
         this.amount = amount;
-        this.items = new HashMap<String, Integer>();
-        this.items.putAll(basket);
+        this.items = new ArrayList<BasketItem>();
+        this.items.addAll(basket);
     }
 
     // Methods
@@ -57,7 +56,7 @@ public class Orders {
 
     public double getAmount() { return amount; }
 
-    public Map<String, Integer> getItems() { return items; }
+    public List<BasketItem> getItems() { return items; }
 
     public String getCustomer(){ return this.customer; }
 }
