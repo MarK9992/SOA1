@@ -83,10 +83,8 @@ public class BasketServiceImpl implements BasketService {
         if (!account.getBasket().contains(item)) {
             throw new BadRequestException("Basket does not contain object " + item + "use POST instead.");
         }
-        if (item.getQuantity() == 0) {
-            account.getBasket().remove(item);
-        }
-        else {
+        account.getBasket().remove(item);
+        if (item.getQuantity() > 0) {
             account.getBasket().add(item);
         }
     }

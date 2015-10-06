@@ -1138,7 +1138,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request>{"value":"jambon"}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/accounts/jean</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="74783968-774d-49ea-ab98-2646f54daf22" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f398a541-4f4a-4db5-bdd4-85875ae431eb" name="Contains"><con:configuration><token>^\{"login":"jean","password":"jambon","address":"right here","basket":\{\}\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
+                        <con:assertion type="Valid HTTP Status Codes" id="74783968-774d-49ea-ab98-2646f54daf22" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f398a541-4f4a-4db5-bdd4-85875ae431eb" name="Contains"><con:configuration><token>^\{"login":"jean","password":"jambon","address":"right here","basket":\[\]\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
                             <con:authType>No Authorization</con:authType>
                         </con:credentials>
                         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -1203,7 +1203,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/>
                         <con:originalUri>http://localhost/cxf/volley/basket/jean</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="33c95381-1cf0-4b36-8551-0168ec1ab578" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="2836d20b-cb3c-4e54-8e7e-7dd60d5b428b" name="Contains"><con:configuration><token>^\{"volley ball":1\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
+                        <con:assertion type="Valid HTTP Status Codes" id="33c95381-1cf0-4b36-8551-0168ec1ab578" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="2836d20b-cb3c-4e54-8e7e-7dd60d5b428b" name="Contains"><con:configuration><token>^\[\{"name":"volley ball","quantity":1,"color":null\}\]$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
                             <con:authType>No Authorization</con:authType>
                         </con:credentials>
                         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -1248,7 +1248,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/>
                         <con:originalUri>http://localhost/cxf/volley/basket/jean</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="33c95381-1cf0-4b36-8551-0168ec1ab578" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="2836d20b-cb3c-4e54-8e7e-7dd60d5b428b" name="Contains"><con:configuration><token>^\{"volley ball":1,"net BLUE":1\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
+                        <con:assertion type="Valid HTTP Status Codes" id="33c95381-1cf0-4b36-8551-0168ec1ab578" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="2836d20b-cb3c-4e54-8e7e-7dd60d5b428b" name="Contains"><con:configuration><token>^\[\{"name":"volley ball","quantity":1,"color":null\},\{"name":"net","quantity":1,"color":"BLUE"\}\]$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
                             <con:authType>No Authorization</con:authType>
                         </con:credentials>
                         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -1260,16 +1260,16 @@
                 </con:config>
             </con:testStep><con:testStep type="restrequest" name="POST - Add another volley ball to basket" id="b3675252-f6b2-4f26-ba59-6111352f14d6">
                 <con:settings/>
-                <con:config service="volley?_wadl" resourcePath="/cxf/volley/basket/{login}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <con:config service="volley?_wadl" resourcePath="/cxf/volley/basket/{login}" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <con:restRequest name="POST - Add another volley ball to basket" id="22587aab-4737-477a-997d-f5f58e119e13" mediaType="application/json" postQueryString="false">
                         <con:settings>
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
                         <con:endpoint>http://localhost:8181</con:endpoint>
-                        <con:request>[{
+                        <con:request>{
    "name": "volley ball",
    "quantity": 2
-}]</con:request>
+}</con:request>
                         <con:originalUri>http://localhost/cxf/volley/basket/jean</con:originalUri>
                         <con:assertion type="Valid HTTP Status Codes" id="14960efc-4858-44e9-a1df-1ae5615869d4" name="Valid HTTP Status Codes"><con:configuration><codes>204</codes></con:configuration></con:assertion><con:credentials>
                             <con:authType>No Authorization</con:authType>
@@ -1291,7 +1291,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/>
                         <con:originalUri>http://localhost/cxf/volley/basket/jean</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="33c95381-1cf0-4b36-8551-0168ec1ab578" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="2836d20b-cb3c-4e54-8e7e-7dd60d5b428b" name="Contains"><con:configuration><token>^\{"volley ball":2,"net BLUE":1\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
+                        <con:assertion type="Valid HTTP Status Codes" id="33c95381-1cf0-4b36-8551-0168ec1ab578" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="2836d20b-cb3c-4e54-8e7e-7dd60d5b428b" name="Contains"><con:configuration><token>^\[\{"name":"net","quantity":1,"color":"BLUE"\},\{"name":"volley ball","quantity":2,"color":null\}\]$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
                             <con:authType>No Authorization</con:authType>
                         </con:credentials>
                         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -1321,7 +1321,7 @@
                         <con:parameters><entry key="accountId" value="jean" xmlns="http://eviware.com/soapui/config"/></con:parameters>
                     </con:restRequest>
                 </con:config>
-            </con:testStep><con:testStep type="transfer" name="Transfert order id" id="4524675a-b832-42be-a75c-f2d006aed343"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:testStep><con:testStep type="restrequest" name="GET - Display Jean's basket 4" id="922dca0d-e96c-431d-bc6a-2202ab9607b1">
+            </con:testStep><con:testStep type="transfer" name="Transfert order id" id="4524675a-b832-42be-a75c-f2d006aed343"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>POST - Pay order</con:sourceStep><con:sourcePath>$.ref</con:sourcePath><con:targetType>orderRef</con:targetType><con:targetStep>GET - Display order (by id)</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="GET - Display Jean's basket 4" id="922dca0d-e96c-431d-bc6a-2202ab9607b1">
                 <con:settings/>
                 <con:config service="volley?_wadl" resourcePath="/cxf/volley/basket/{login}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <con:restRequest name="GET - Display Jean's basket 4" id="eb6f08c3-0866-4d63-b8ec-829a2a693217" mediaType="application/json">
@@ -1331,7 +1331,7 @@
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/>
                         <con:originalUri>http://localhost/cxf/volley/basket/jean</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="33c95381-1cf0-4b36-8551-0168ec1ab578" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="2836d20b-cb3c-4e54-8e7e-7dd60d5b428b" name="Contains"><con:configuration><token>^\{\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
+                        <con:assertion type="Valid HTTP Status Codes" id="33c95381-1cf0-4b36-8551-0168ec1ab578" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="2836d20b-cb3c-4e54-8e7e-7dd60d5b428b" name="Contains"><con:configuration><token>^\[\]$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials>
                             <con:authType>No Authorization</con:authType>
                         </con:credentials>
                         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -1345,6 +1345,10 @@
                         <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/><con:originalUri>http://localhost/cxf/volley/orders/account/jean</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="7e5f4d31-38a6-4ea8-b942-af77f5402de2" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="customerId" value="jean" xmlns="http://eviware.com/soapui/config"/></con:parameters>
+                    </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GET - Display order (by id)" id="c71fb24d-053c-4bc1-868e-c147b611fa92"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/orders/order/{orderRef}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET - Display order (by id)" id="acb6df35-e013-4940-a8bc-cf9fd902f137" mediaType="application/json">
+                        <con:settings/>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/><con:assertion type="Valid HTTP Status Codes" id="e7d054e6-3ed9-4075-9970-8f05f6ad7c6b" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/>
                     </con:restRequest></con:config></con:testStep><con:properties/>
         </con:testCase>
         <con:properties/>
