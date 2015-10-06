@@ -3,7 +3,6 @@ package fr.unice.polytech.soa1.volley.basket;
 import fr.unice.polytech.soa1.volley.Storage;
 import fr.unice.polytech.soa1.volley.accounts.Account;
 import fr.unice.polytech.soa1.volley.accounts.AccountStorageMock;
-import fr.unice.polytech.soa1.volley.catalog.Color;
 import fr.unice.polytech.soa1.volley.catalog.VolleyStuff;
 import fr.unice.polytech.soa1.volley.catalog.VolleyStuffStorageMock;
 import fr.unice.polytech.soa1.volley.customexceptions.ConflictException;
@@ -11,7 +10,6 @@ import fr.unice.polytech.soa1.volley.customexceptions.ConflictException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Marc Karassev
@@ -28,7 +26,7 @@ public class BasketServiceImpl implements BasketService {
         stuffStorage = VolleyStuffStorageMock.getInstance();
     }
 
-    public Map<String, Integer> getBasket(String login) {
+    public List<BasketItem> getBasket(String login) {
         Account account = accountStorage.read(login);
 
         if (account == null) {
@@ -50,19 +48,11 @@ public class BasketServiceImpl implements BasketService {
             throw new BadRequestException("no POST data");
         }
 
-        Map<String, Integer> basket = account.getBasket();
-        String itemKey;
-        Color color;
+        List<BasketItem> basket = account.getBasket();
 
         for (BasketItem item: products) {
-            if ((color = item.getColor()) != null) {
-                itemKey = item.getName() + " " + color;
-            }
-            else {
-                itemKey = item.getName();
-            }
-            if (basket.get(itemKey) != null) {
-                throw new ConflictException("Basket already contains " + itemKey +" objects." +
+            if (basket.contains(item)) {
+                throw new ConflictException("Basket already contains " + item +" objects." +
                         " Use PUT to update quantity or DELETE to remove instead.");
             }
             if (stuffStorage.read(item.getName()) == null) {
@@ -71,7 +61,7 @@ public class BasketServiceImpl implements BasketService {
             if (item.getQuantity() <= 0) {
                 throw new BadRequestException("Item quantity should be greater or equal than 0.");
             }
-            basket.put(itemKey, item.getQuantity());
+            basket.add(item);
         }
     }
 
@@ -80,8 +70,6 @@ public class BasketServiceImpl implements BasketService {
     @Consumes(MediaType.APPLICATION_JSON)
     public void adjustQuantity(@PathParam("login") String login, BasketItem item) {
         Account account = accountStorage.read(login);
-        String itemKey;
-        Color color;
 
         if (account == null) {
             throw new NotFoundException();
@@ -89,23 +77,17 @@ public class BasketServiceImpl implements BasketService {
         if (item == null) {
             throw new BadRequestException("no PUT data");
         }
-        if ((color = item.getColor()) != null) {
-            itemKey = item.getName() + " " + color;
-        }
-        else {
-            itemKey = item.getName();
-        }
         if (item.getQuantity() < 0) {
             throw new BadRequestException("quantity should be greater or equal than 0");
         }
-        if (!account.getBasket().containsKey(itemKey)) {
-            throw new BadRequestException("Basket does not contain object " + itemKey + "use POST instead.");
+        if (!account.getBasket().contains(item)) {
+            throw new BadRequestException("Basket does not contain object " + item + "use POST instead.");
         }
         if (item.getQuantity() == 0) {
-            account.getBasket().remove(itemKey);
+            account.getBasket().remove(item);
         }
         else {
-            account.getBasket().put(itemKey, item.getQuantity());
+            account.getBasket().add(item);
         }
     }
 }

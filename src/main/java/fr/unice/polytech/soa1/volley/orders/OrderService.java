@@ -1,8 +1,9 @@
 package fr.unice.polytech.soa1.volley.orders;
 
-import fr.unice.polytech.soa1.volley.accounts.Account;
-
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import java.util.Collection;
 
 /**
@@ -21,7 +22,7 @@ public interface OrderService {
     @GET
     Collection<Orders> getOrders();
 
-    @Path("/{orderRef/status}")
+    @Path("/{orderRef}/{status}")
     @PUT
     void updateStatus(@PathParam("orderRef") String orderReference, @PathParam("status") Status status);
 }

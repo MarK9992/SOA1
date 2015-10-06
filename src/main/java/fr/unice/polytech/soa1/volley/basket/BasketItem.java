@@ -28,6 +28,30 @@ public class BasketItem {
         this.color = color;
     }
 
+    // Methods
+
+    @Override
+    public String toString() {
+        return name + " " + color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BasketItem)) return false;
+
+        BasketItem that = (BasketItem) o;
+
+        return name.equals(that.name) && color == that.color;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        return result;
+    }
+
     // Getters and setters
 
     public String getName() {

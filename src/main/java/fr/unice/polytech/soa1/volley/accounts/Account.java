@@ -2,9 +2,10 @@ package fr.unice.polytech.soa1.volley.accounts;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import fr.unice.polytech.soa1.volley.basket.BasketItem;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Marc Karassev
@@ -16,7 +17,7 @@ public class Account {
     private String login;
     private String password;
     private String address;
-    private Map<String, Integer> basket;
+    private List<BasketItem> basket;
 
     // Constructors
 
@@ -27,7 +28,7 @@ public class Account {
         this.login = login;
         this.password = password;
         this.address = address;
-        this.basket = new HashMap<String, Integer>();
+        this.basket = new ArrayList<BasketItem>();
     }
 
     // Methods
@@ -50,7 +51,7 @@ public class Account {
         return address;
     }
 
-    public Map<String, Integer> getBasket() {
+    public List<BasketItem> getBasket() {
         return basket;
     }
 }

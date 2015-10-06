@@ -11,7 +11,7 @@ public interface BasketService {
 
     @Path("/{login}")
     @GET
-    Map<String, Integer> getBasket(@PathParam("login") String login);
+    List<BasketItem> getBasket(@PathParam("login") String login);
 
     @Path("/{login}")
     @POST
