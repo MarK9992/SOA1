@@ -18,6 +18,8 @@ public class AccountStorageMock implements Storage<Account> {
         contents = new HashMap<String, Account>();
         create(new Account("admin", "admin", ""));
         create(new Account("jean", "jambon", "right here"));
+        create(new Account("gil", "gigi", "delivery service"));
+        create(new Account("emilie", "pwd", "billing service"));
     }
 
     public static AccountStorageMock getInstance() {

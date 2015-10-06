@@ -687,7 +687,7 @@
             </con:method>
         </con:resource>
     </con:interface>
-    <con:testSuite id="628d1c9b-9f76-4aa0-a7a7-660b5efaf080" name="Account Management Scenarii">
+    <con:testSuite id="628d1c9b-9f76-4aa0-a7a7-660b5efaf080" name="Management account Scenarii">
         <con:settings/>
         <con:runType>SEQUENTIAL</con:runType>
         <con:testCase id="930f12d5-6c8a-4037-9cfc-521a324195d6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Valid account management" searchProperties="true">
@@ -882,145 +882,7 @@
         <con:properties/>
     </con:testSuite>
     
-    <con:testSuite id="94db7f5f-0d1f-43c7-8f3a-00a785d5f1dd" name="Update Account">
-        <con:settings/>
-        <con:runType>SEQUENTIAL</con:runType>
-        <con:testCase id="103fcb66-c0b2-438e-8eb0-764061cff40a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Successful update" searchProperties="true">
-            <con:settings/>
-            <con:testStep type="properties" name="properties" id="a421fd01-9160-4eaf-8006-ff55d4eb1cfb">
-                <con:settings/>
-                <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:properties>
-                        <con:property>
-                            <con:name>updated account</con:name>
-                            <con:value>{"login":"admin","password":"admin","address":"somewhere","basket":{}}
-                            </con:value>
-                        </con:property>
-                    </con:properties>
-                </con:config>
-            </con:testStep>
-            <con:testStep type="restrequest" name="PUT successful update" id="ee72441e-b984-405c-85bd-9da890246984">
-                <con:settings/>
-                <con:config service="volley?_wadl" methodName="PUT" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="PUT successful update" id="083b106d-d3f6-4226-b633-9d9e8fa095fb" mediaType="application/json" postQueryString="false">
-                        <con:settings>
-                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-                        </con:settings>
-                        <con:encoding>UTF-8</con:encoding>
-                        <con:endpoint>http://localhost:8181</con:endpoint>
-                        <con:request>${properties#updated account#$}</con:request>
-                        <con:originalUri>http://localhost/cxf/volley/accounts/admin</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="c1d3f6f2-f385-4c05-b97f-e704630190ed" name="Valid HTTP Status Codes">
-                            <con:configuration>
-                                <codes>204</codes>
-                            </con:configuration>
-                        </con:assertion>
-                        <con:credentials>
-                            <con:authType>No Authorization</con:authType>
-                        </con:credentials>
-                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-                        <con:jmsPropertyConfig/>
-                        <con:parameters>
-                            <entry key="login" value="admin" xmlns="http://eviware.com/soapui/config"/>
-                        </con:parameters>
-                    </con:restRequest>
-                </con:config>
-            </con:testStep>
-            <con:testStep type="transfer" name="Property Transfer" id="dd7184c8-c37d-4793-bcb2-0d9073a899f7">
-                <con:settings/>
-                <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-                        <con:name>1</con:name>
-                        <con:sourceType>login</con:sourceType>
-                        <con:sourceStep>PUT successful update</con:sourceStep>
-                        <con:targetType>login</con:targetType>
-                        <con:targetStep>GET updated account</con:targetStep><con:upgraded>true</con:upgraded>
-                    </con:transfers>
-                </con:config>
-            </con:testStep>
-            <con:testStep type="restrequest" name="GET updated account" id="300d7c20-e0f4-44aa-85e4-9838f5ee5992">
-                <con:settings/>
-                <con:config service="volley?_wadl" methodName="GET" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="GET updated account" id="c4897588-aeec-424d-b92c-5ae88e99a78a" mediaType="application/json">
-                        <con:settings>
-                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-                        </con:settings>
-                        <con:encoding>UTF-8</con:encoding>
-                        <con:endpoint>http://localhost:8181</con:endpoint>
-                        <con:request/>
-                        <con:originalUri>http://localhost/cxf/volley/accounts/admin</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="607680e2-37c8-4941-a7d6-b74785931df5" name="Valid HTTP Status Codes">
-                            <con:configuration>
-                                <codes>200</codes>
-                            </con:configuration>
-                        </con:assertion>
-                        <con:assertion type="Simple Contains" id="b2cfdb11-1171-4d8c-aa08-48e0a60efa5f" name="Contains">
-                            <con:configuration>
-                                <token>${properties#updated account#$}</token>
-                                <ignoreCase>false</ignoreCase>
-                                <useRegEx>false</useRegEx>
-                            </con:configuration>
-                        </con:assertion>
-                        <con:assertion type="Simple Contains" id="8a547a79-81ce-4a80-a912-160d3caa468b" name="Contains 1">
-                            <con:configuration>
-                                <token>^\{".*\}$</token>
-                                <ignoreCase>false</ignoreCase>
-                                <useRegEx>true</useRegEx>
-                            </con:configuration>
-                        </con:assertion>
-                        <con:credentials>
-                            <con:authType>No Authorization</con:authType>
-                        </con:credentials>
-                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-                        <con:jmsPropertyConfig/>
-                        <con:parameters>
-                            <entry key="login" value="admin" xmlns="http://eviware.com/soapui/config"/>
-                        </con:parameters>
-                    </con:restRequest>
-                </con:config>
-            </con:testStep>
-            <con:testStep type="restrequest" name="PUT - Add a volley ball" id="c05875e1-00c3-470f-bae9-2a2c2d834e47"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/basket/{login}" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="PUT - Add a volley ball" id="00012d6e-fd93-4209-b35a-374f7d6b8016" mediaType="application/json" postQueryString="false">
-                        <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
-                        <con:endpoint>http://localhost:8181</con:endpoint>
-                        <con:request>{
-   "name": "volley ball",
-   "quantity": 2
-}</con:request><con:originalUri>http://localhost/cxf/volley/basket/jean</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="bb8f77fa-2179-42f0-9490-bd65478f2f20" name="Valid HTTP Status Codes"><con:configuration><codes>204</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="login" value="jean" xmlns="http://eviware.com/soapui/config"/></con:parameters>
-                    </con:restRequest></con:config></con:testStep><con:properties/>
-        </con:testCase>
-        <con:testCase id="df1d3640-4a16-4410-bab5-71bc48fee0ce" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Failure" searchProperties="true">
-            <con:settings/>
-            <con:testStep type="restrequest" name="PUT update nonexistent account" id="f804e278-60af-4d68-94fb-acd7fbcd2b24">
-                <con:settings/>
-                <con:config service="volley?_wadl" methodName="PUT" resourcePath="/cxf/volley/accounts/{login}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                    <con:restRequest name="PUT update nonexistent account" id="0eb9b68b-d22b-478e-8d1f-de28c89c8bd8" mediaType="application/json" postQueryString="false">
-                        <con:settings>
-                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-                        </con:settings>
-                        <con:encoding>UTF-8</con:encoding>
-                        <con:endpoint>http://localhost:8181</con:endpoint>
-                        <con:request>{"login":"hello","password":"bye"}</con:request>
-                        <con:originalUri>http://localhost/cxf/volley/accounts/</con:originalUri>
-                        <con:assertion type="Valid HTTP Status Codes" id="a367f880-afaf-466d-a26f-0a893dfdc25d" name="Valid HTTP Status Codes">
-                            <con:configuration>
-                                <codes>404</codes>
-                            </con:configuration>
-                        </con:assertion>
-                        <con:credentials>
-                            <con:authType>No Authorization</con:authType>
-                        </con:credentials>
-                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-                        <con:jmsPropertyConfig/>
-                        <con:parameters>
-                            <entry key="login" value="nonexistent" xmlns="http://eviware.com/soapui/config"/>
-                        </con:parameters>
-                    </con:restRequest>
-                </con:config>
-            </con:testStep>
-            <con:properties/>
-        </con:testCase>
-        <con:properties/>
-    </con:testSuite>
+    
     <con:testSuite id="1e8d4011-4da1-4675-b085-6521cdceda42" name="Order volley stuffs Scenario">
         <con:settings/>
         <con:runType>SEQUENTIAL</con:runType>
@@ -1276,7 +1138,7 @@
                     </con:restRequest></con:config></con:testStep><con:properties/>
         </con:testCase>
         <con:properties/>
-    </con:testSuite><con:testSuite id="2e2c9fcd-8838-420b-a3a9-45e6c46645f8" name="Catalog management Scenario"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="8b6795ab-f219-48f1-93ea-ca8027bc53ac" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Catalog management" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="POST - Check Paul's password" id="2af94bb8-894c-40c2-9076-0a143871252f"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST - Check Paul's password" id="779ae9c9-833c-4386-9633-c8068b91f1a6" mediaType="application/json" postQueryString="false">
+    </con:testSuite><con:testSuite id="2e2c9fcd-8838-420b-a3a9-45e6c46645f8" name="Management catalog Scenario"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="8b6795ab-f219-48f1-93ea-ca8027bc53ac" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Catalog management" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="POST - Check Paul's password" id="2af94bb8-894c-40c2-9076-0a143871252f"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST - Check Paul's password" id="779ae9c9-833c-4386-9633-c8068b91f1a6" mediaType="application/json" postQueryString="false">
                         <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request>{"value":"admin"}</con:request><con:originalUri>http://localhost/cxf/volley/accounts/admin</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="c02c83c4-fba3-42be-bc38-16210ee4c790" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="d19049c4-62c5-4519-af12-f50628f3332e" name="Contains"><con:configuration><token>^\{"login":"admin","password":"admin","address":"","basket":\[\]\}</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="login" value="admin" xmlns="http://eviware.com/soapui/config"/></con:parameters>
@@ -1336,6 +1198,29 @@
                         <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
                         <con:endpoint>http://localhost:8181</con:endpoint>
                         <con:request/><con:originalUri>http://localhost/cxf/volley/catalog/cap</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="26f9b73b-c857-4f52-ab6d-793ef80d4e96" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="3ba317bd-7af2-4c97-ab73-a76e208b9ee9" name="Contains"><con:configuration><token>^\{"name":"cap","price":6.0,"description":"Play volleyball without being dazzled","color":null\}$</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="name" value="cap" xmlns="http://eviware.com/soapui/config"/></con:parameters>
+                    </con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="885b6104-90a6-4792-abd2-519ed5f1abd0" name="Manage orders and delivery Scenario"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6e035bc5-176f-4b47-89ca-14428e69a9ef" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Manage delivery" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="POST - Check Gil's password" id="137c6284-b5ff-466a-9bc1-f5f0bd08e33d"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/accounts/{login}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST - Check Gil's password" id="779ae9c9-833c-4386-9633-c8068b91f1a6" mediaType="application/json" postQueryString="false">
+                        <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request>{"value":"gigi"}</con:request><con:originalUri>http://localhost/cxf/volley/accounts/gil</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="c02a5cfe-ae6b-4420-8827-655958316d17" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="login" value="gil" xmlns="http://eviware.com/soapui/config"/></con:parameters>
+                    </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GET - List orders" id="1de1c956-3625-403f-a223-5d90c8c45b21"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/orders" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET - List orders" id="5b1c5067-749f-4050-9eda-6b5020495476" mediaType="application/json">
+                    <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+                    <con:endpoint>http://localhost:8181</con:endpoint>
+                    <con:request/><con:originalUri>http://localhost/cxf/volley/orders</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="c89d0124-b486-4a7c-8364-d377a118b4e2" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/>
+                </con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Transfer order id" id="d963adfa-410a-4a6b-aa1e-6baafb2eb00f"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GET - List orders</con:sourceStep><con:sourcePath>$[0].ref</con:sourcePath><con:targetType>orderRef</con:targetType><con:targetStep>GET - display specific order information</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>2</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GET - List orders</con:sourceStep><con:sourcePath>$[0].ref</con:sourcePath><con:targetType>orderRef</con:targetType><con:targetStep>PUT - Modify order's status</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="GET - display specific order information" id="53f25ca1-bf44-4dd9-a80f-f81313e97c24"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/orders/order/{orderRef}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET - display specific order information" id="acb6df35-e013-4940-a8bc-cf9fd902f137" mediaType="application/json">
+                        <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/><con:originalUri>http://localhost/cxf/volley/orders/order/1</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="8eca1b51-66bb-4f28-8698-0a63c65756eb" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="orderRef" value="1" xmlns="http://eviware.com/soapui/config"/></con:parameters>
+                    </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="PUT - Modify order's status" id="b2a8113c-6416-48be-ace1-61111bcd9a54"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/orders/{orderRef}/{status}" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="PUT - Modify order's status" id="80566e9f-2598-4d0e-9341-97e799a799c4" mediaType="application/json" postQueryString="false">
+                        <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/><con:originalUri>http://localhost/cxf/volley/orders/1/SHIPPED</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="862536db-c5bc-4fc7-b204-110b706ade05" name="Valid HTTP Status Codes"><con:configuration><codes>204</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="status" value="SHIPPED"/>
+  <con:entry key="orderRef" value="1"/>
+</con:parameters>
+                    </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GET - display order shipped information" id="eaf5ebfe-bd90-4488-813d-8ba3ef779883"><con:settings/><con:config service="volley?_wadl" resourcePath="/cxf/volley/orders/order/{orderRef}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET - display order shipped information" id="acb6df35-e013-4940-a8bc-cf9fd902f137" mediaType="application/json">
+                        <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+                        <con:endpoint>http://localhost:8181</con:endpoint>
+                        <con:request/><con:originalUri>http://localhost/cxf/volley/orders/order/1</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="8eca1b51-66bb-4f28-8698-0a63c65756eb" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="409f5080-1f2f-4541-8072-e75c75e6e969" name="Contains"><con:configuration><token>"state":"SHIPPED"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="orderRef" value="1" xmlns="http://eviware.com/soapui/config"/></con:parameters>
                     </con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/>
     <con:wssContainer/>
     <con:oAuth2ProfileContainer/>
