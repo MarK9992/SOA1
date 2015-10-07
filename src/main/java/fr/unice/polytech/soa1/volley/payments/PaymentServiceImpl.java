@@ -6,6 +6,7 @@ import fr.unice.polytech.soa1.volley.accounts.AccountStorageMock;
 import fr.unice.polytech.soa1.volley.basket.BasketItem;
 import fr.unice.polytech.soa1.volley.catalog.VolleyStuff;
 import fr.unice.polytech.soa1.volley.catalog.VolleyStuffStorageMock;
+import fr.unice.polytech.soa1.volley.orders.OrderStatus;
 import fr.unice.polytech.soa1.volley.orders.OrderStorageMock;
 import fr.unice.polytech.soa1.volley.orders.Orders;
 
@@ -63,7 +64,7 @@ public class PaymentServiceImpl implements PaymentService {
         }
 
         Orders order = new Orders(accountId, account.getBasket(), amount, address);
-        Payment finalPayment = new Payment(accountId, address, amount,order.getRef(), cardNumber, cryptogram, validityDate);
+        Payment finalPayment = new Payment(accountId, address, amount,order.getRef(), cardNumber, cryptogram, validityDate, PaymentStatus.UNCHECKED);
         paymentStorage.create(finalPayment);
         orderStorage.create(order);
         account.emptyBasket();
@@ -71,10 +72,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     private boolean validatePayment(long cardNumber){
-        if(cardNumber % 2 == 0) {
-            return true;
-        }
-        return false;
+        return (cardNumber % 2 == 0);
     }
 
     @GET
@@ -105,6 +103,57 @@ public class PaymentServiceImpl implements PaymentService {
         }
         return payment;
     }
+
+    @Path("/status/{statusId}")
+    @GET
+    public Collection<Payment> getPaymentsByStatus(@PathParam("statusId") PaymentStatus status) {
+        Collection<Payment> allPayments = paymentStorage.findAll();
+        Collection<Payment> statusPayments = new ArrayList<Payment>();
+
+        for(Payment payment : allPayments){
+            if(payment.getStatus().equals(status)){
+                statusPayments.add(payment);
+            }
+        }
+        return statusPayments;
+    }
+
+    @Path("/status/{statusId}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void updateStatus(@PathParam("statusId") PaymentStatus status, List<Payment> payments) {
+        if (payments == null) {
+            throw new BadRequestException("no PUT data");
+        }
+        for(Payment payment : payments){
+            if(payment == null){
+                throw new NotFoundException("The given payment does not exist");
+            }
+            if(status == PaymentStatus.NULLIFY){
+                Orders order = orderStorage.read(payment.getOrderReference());
+                order.setStatus(OrderStatus.CANCELED);
+            }
+            if(status == PaymentStatus.APPROVED || status == PaymentStatus.NULLIFY) {
+                payment.setStatus(status);
+            }
+        }
+    }
+
+    /*@Path("/{paymentId}/{status}")
+    @PUT
+    public void updateStatus(@PathParam("paymentId") String paymentId, @PathParam("status") PaymentStatus status) {
+        Payment payment = paymentStorage.read(paymentId);
+        if(payment == null){
+            throw new NotFoundException("The given payment does not exist");
+        }
+        if(status == PaymentStatus.NULLIFY){
+            Orders order = orderStorage.read(payment.getOrderReference());
+            order.setStatus(OrderStatus.CANCELED);
+        }
+        if(status == PaymentStatus.APPROVED || status == PaymentStatus.NULLIFY) {
+            payment.setStatus(status);
+        }
+    }*/
 
     private double calculateAmount(List<BasketItem> basket){
         double amount = 0;

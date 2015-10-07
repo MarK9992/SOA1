@@ -16,6 +16,7 @@ public class Payment {
     private long cardNumber;
     private short cryptogram;
     private String validityDate;
+    private PaymentStatus status;
 
     
     // Constructors
@@ -27,8 +28,9 @@ public class Payment {
                    @JsonProperty(value = "orderRef") String orderRef,
                    @JsonProperty(value = "cardNumber", required = true) long cardNumber,
                    @JsonProperty(value = "crypto", required = true) short cryptogram,
-                   @JsonProperty(value = "validityDate", required = true) String date){
-        this.id = orderRef;
+                   @JsonProperty(value = "validityDate", required = true) String date,
+                   @JsonProperty(value = "status") PaymentStatus status){
+        this.id = id;
         this.customer = customer;
         this.address = address;
         this.amount = amount;
@@ -36,13 +38,15 @@ public class Payment {
         this.cardNumber = cardNumber;
         this.cryptogram = cryptogram;
         this.validityDate = date;
+        this.status = status;
     }
 
     // Methods
 
     @Override
     public String toString() {
-        return "{ " + id + ", " + customer + ", " + address+ ", " + amount + ", " + orderReference + ", " + cardNumber + " }";
+        return "{ " + id + ", " + status + ", " + customer + ", " + address+ ", " + amount +
+                ", " + orderReference + ", " + cardNumber + " }";
     }
 
     // Getters and setters
@@ -79,5 +83,13 @@ public class Payment {
     @JsonIgnore
     public String getValidityDate() {
         return validityDate;
+    }
+
+    public PaymentStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(PaymentStatus status) {
+        this.status = status;
     }
 }

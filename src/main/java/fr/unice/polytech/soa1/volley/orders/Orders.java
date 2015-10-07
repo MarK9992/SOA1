@@ -15,7 +15,7 @@ public class Orders {
 
     private static long orderCpt = 0;
     private String ref;
-    private Status status;
+    private OrderStatus status;
     private String customer;
     private String deliveryAddress;
     private double amount;
@@ -31,7 +31,7 @@ public class Orders {
         this.ref = String.valueOf(orderCpt);
         this.customer = accountName;
         this.deliveryAddress = address;
-        this.status = Status.PAID;
+        this.status = OrderStatus.PAID;
         this.amount = amount;
         this.items = new ArrayList<BasketItem>();
         this.items.addAll(basket);
@@ -50,9 +50,9 @@ public class Orders {
 
     public String getRef() { return ref; }
 
-    public Status getState() { return status; }
+    public OrderStatus getState() { return status; }
 
-    public void setStatus(Status newStatus) { this.status = newStatus; }
+    public void setStatus(OrderStatus newStatus) { this.status = newStatus; }
 
     public double getAmount() { return amount; }
 

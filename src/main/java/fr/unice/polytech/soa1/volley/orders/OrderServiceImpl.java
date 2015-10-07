@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
     @Path("/{orderRef}/{status}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void updateStatus(@PathParam("orderRef") String orderReference, @PathParam("status") Status status) {
+    public void updateStatus(@PathParam("orderRef") String orderReference, @PathParam("status") OrderStatus status) {
         Orders order = orderStorage.read(orderReference);
         if(order == null) {
             throw new NotFoundException();

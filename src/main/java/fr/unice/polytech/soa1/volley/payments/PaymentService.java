@@ -2,11 +2,9 @@ package fr.unice.polytech.soa1.volley.payments;
 
 import fr.unice.polytech.soa1.volley.orders.Orders;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import java.util.Collection;
+import java.util.List;
 
 public interface PaymentService {
 
@@ -17,12 +15,20 @@ public interface PaymentService {
     @GET
     Collection<Payment> getPayments();
 
-    @Path("/{accountId}")
+    @Path("/account/{accountId}")
     @GET
     Collection<Payment> getPaymentsByAccount(@PathParam("accountId") String customerId);
 
-    @Path("/{paymentId}")
+    @Path("/payment/{paymentId}")
     @GET
     Payment getPaymentById(@PathParam("paymentId") String paymentId);
+
+    @Path("/status/{statusId}")
+    @GET
+    Collection<Payment> getPaymentsByStatus(@PathParam("statusId") PaymentStatus status);
+
+    @Path("/status/{statusId}")
+    @PUT
+    void updateStatus(@PathParam("statusId") PaymentStatus status, List<Payment> payments);
 
 }

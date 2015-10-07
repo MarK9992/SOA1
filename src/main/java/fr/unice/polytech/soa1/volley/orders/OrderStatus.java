@@ -3,7 +3,7 @@ package fr.unice.polytech.soa1.volley.orders;
 /**
  * @author : Laureen Ginier
  */
-public enum Status {
+public enum OrderStatus {
 
     PAID("Order paid"),
     PREPARATION("Order in preparation"),
@@ -15,7 +15,7 @@ public enum Status {
 
     private String description;
 
-    Status(String description){
+    OrderStatus(String description){
         this.description = description;
     }
 

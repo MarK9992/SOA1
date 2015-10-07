@@ -24,5 +24,5 @@ public interface OrderService {
 
     @Path("/{orderRef}/{status}")
     @PUT
-    void updateStatus(@PathParam("orderRef") String orderReference, @PathParam("status") Status status);
+    void updateStatus(@PathParam("orderRef") String orderReference, @PathParam("status") OrderStatus status);
 }
