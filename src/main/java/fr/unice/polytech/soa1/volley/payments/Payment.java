@@ -75,12 +75,11 @@ public class Payment {
         return cardNumber;
     }
 
-    @JsonIgnore
+    @JsonProperty("crypto")
     public short getCryptogram() {
         return cryptogram;
     }
 
-    @JsonIgnore
     public String getValidityDate() {
         return validityDate;
     }
